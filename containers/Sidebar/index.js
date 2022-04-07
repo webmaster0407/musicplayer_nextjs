@@ -1,8 +1,7 @@
 import tw from "tailwind-styled-components";
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
 import { FaSearch, FaHome, FaQuran } from "react-icons/fa";
+import { CustomLink } from "../../components/CustomLink";
 
 const url = [
   { to: "/", title: "Home", icon: <FaHome /> },
@@ -30,21 +29,16 @@ export const Sidebar = () => {
   );
 };
 
-const CustomLink = ({ to, title }) => {
-  const router = useRouter();
-  return (
-    <Link href={to} passHref={true}>
-      <SideLink visited={to === router.pathname}>{title}</SideLink>
-    </Link>
-  );
-};
-
 const SidebarWrapper = tw.nav`
+  left-[-240px]
+  md:left-[0px]
   w-[240px]
   fixed
   top-0
   bottom-0
   pt-6
+  bg-[#13151E]
+
 `;
 
 const ItemWrapper = tw.div`

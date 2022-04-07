@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: relative;
+    min-height: 360px;
+    background-color: #97AE05;
+    overflow: hidden;
+   background: center/cover no-repeat url("/images/dequency-frequency.jpg");
+}
+.title {
+    line-height: 1.25;
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+.title_yellow {
+    margin: 0;
+    font-family: Helvetica,sans-serif;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: 1.66;
+    color: #DBF91D;
+}
+.text {
+    font-family: Helvetica,sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.25;
+}
+.btn_field {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btn {
+    background-color: rgb(236, 236, 236);
+    font-size: 18px;
+    padding: 10px 10px;
+    width: 150px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.btn_yellow {
+    background-color: #DBF91D;
+}
