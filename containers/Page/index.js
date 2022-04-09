@@ -1,5 +1,5 @@
 import tw from "tailwind-styled-components";
-import { Navbar } from "../Navbar";
+import { SearchBox, Navbar } from "../Navbar";
 
 export const Page = tw.section`
   w-full
@@ -7,14 +7,14 @@ export const Page = tw.section`
 `;
 
 export const PageWrapper = tw.div`
-  m-auto
+  bg-[#13151E]
   h-[100vh]
 `;
-export const PageContent = ({ children }) => {
+export const PageContent = ({ children, toggle }) => {
   return (
-    <div className="bg-[#1B1E2B] h-[100vh] overflow-y-scroll p-[30px] text-white md:ml-[240px] ">
+    <div className="p-[0px] bg-[#1B1E2B] h-[100vh] overflow-y-scroll md:p-[30px] text-white ML:ml-[240px]">
       {/* <SearchBox /> */}
-      <Navbar />
+      <Navbar toggle={toggle} />
       <div>{children}</div>
     </div>
   );

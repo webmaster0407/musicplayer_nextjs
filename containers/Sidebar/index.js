@@ -1,7 +1,9 @@
 import tw from "tailwind-styled-components";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FaSearch, FaHome, FaQuran } from "react-icons/fa";
-import { CustomLink } from "../../components/CustomLink";
+import { useState, useEffect } from "react";
 
 const url = [
   { to: "/", title: "Home", icon: <FaHome /> },
@@ -9,13 +11,18 @@ const url = [
   { to: "/faqs", title: "FAQs", icon: <FaQuran /> },
 ];
 
-export const Sidebar = () => {
+export const Sidebar = ({ open = true, toggle }) => {
   return (
-    <SidebarWrapper>
+    <SidebarWrapper
+      className={open ? "left-0 ML:left-0" : "left-[-240px] ML:left-0"}
+    >
       <ul>
-        <SideMenuItem className="pb-8">
-          <Image src="/logo/logo.svg" width="174" height="28" alt="logo" />
-        </SideMenuItem>
+        <div>
+          <SideMenuItem className="pb-8">
+            <Image src="/logo/logo.svg" width="174" height="28" alt="logo" />
+            {open && <button onClick={toggle}>X</button>}
+          </SideMenuItem>
+        </div>
         {url.map((item, index) => {
           return (
             <SideMenuItem key={index}>
@@ -29,16 +36,24 @@ export const Sidebar = () => {
   );
 };
 
+const CustomLink = ({ to, title }) => {
+  const router = useRouter();
+  return (
+    <Link href={to}>
+      <a>{title}</a>
+    </Link>
+  );
+};
+
 const SidebarWrapper = tw.nav`
-  left-[-240px]
-  md:left-[0px]
+  z-10
   w-[240px]
   fixed
   top-0
   bottom-0
   pt-6
   bg-[#13151E]
-
+  opacity-100
 `;
 
 const ItemWrapper = tw.div`

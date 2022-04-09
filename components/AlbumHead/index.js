@@ -1,9 +1,11 @@
-import { MyImage } from "../MyImage";
+import Image from "next/image";
 import Link from "next/link";
 export const AlbumHead = ({ src, title, auther }) => {
   return (
     <div className="flex mb-20">
-      <MyImage src={src} width="120" height="120" />
+      <div className="shrink-0">
+        <Image src={src} width="120" height="120" />
+      </div>
       <div className="ml-8">
         <h1 className="text-3xl">{title}</h1>
         <p className="mb-6">{auther}</p>

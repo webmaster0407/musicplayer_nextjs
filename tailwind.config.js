@@ -8,11 +8,18 @@ module.exports = {
   darkMode: "media", // or 'class'
   theme: {
     screens: {
-      sm: "640px",
+      sm: "600px",
       md: "768px",
+      ML: "900px",
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+      maxWM: { max: "900px" },
+    },
+    extend: {
+      transitionProperty: {
+        bottom: "bottom",
+      },
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,

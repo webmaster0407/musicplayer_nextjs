@@ -1,8 +1,15 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import { Page, PageContent, Sidebar, PageWrapper } from "../containers";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
+  const [sidebar, setSidebar] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebar(!sidebar);
+  };
+
   return (
     <Page>
       <Head>
@@ -11,8 +18,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageWrapper>
-        <Sidebar />
-        <PageContent>
+        <Sidebar open={sidebar} toggle={toggleSidebar} />
+        <PageContent toggle={toggleSidebar}>
           <Component {...pageProps} />
         </PageContent>
       </PageWrapper>

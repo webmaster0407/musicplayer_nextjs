@@ -1,12 +1,16 @@
-import { MyImage } from "../MyImage";
+import Image from "next/image";
 import Link from "next/link";
-
+import Wave from "../Wave";
+import { FaPlayCircle } from "react-icons/fa";
+import MusicPlayer from "../MusicPlayer";
 export const AlbumCard = ({ src, title, license, desc }) => {
   return (
-    <div className="flex w-full border-b-[1px] border-cyan-800 mb-10">
-      <MyImage src={src} width="160" height="160" />
+    <div className="flex w-full border-b-[1px] border-cyan-800 mb-3">
+      <div>
+        <Image src={src} width="160px" height="160px" alt="" />
+      </div>
       <div className="ml-8 flex flex-col w-full">
-        <div className="mb-2 flex justify-between">
+        <div className="mb-2 block justify-between sm:flex">
           <div>
             <h1 className="text-lg font-semibold">{title}</h1>
             <p className="mb-6 text-xs">{desc}</p>
@@ -19,8 +23,12 @@ export const AlbumCard = ({ src, title, license, desc }) => {
             </Link>
           </div>
         </div>
-        <div className="mb-2">
-          <button className="text-lg bg-[#2d3248] border-[#3f4664] font-semibold w-[50px] h-[50px] pointer text-center items-center rounded-full"></button>
+        <div className="mb-5 flex">
+          {/* <MusicPlayer /> */}
+
+          {/* <FaPlayCircle className="text-5xl text-[#2d3248] hover:text-yellow-400 items-center pointer " /> */}
+          {/* <button className="text-lg bg-[#2d3248] border-[#3f4664] font-semibold w-[50px] h-[50px] pointer text-center items-center rounded-full"></button> */}
+          {/* <Wave /> */}
         </div>
         <div className="justify-between flex mr-3 mb-12">
           <div>

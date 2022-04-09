@@ -1,29 +1,19 @@
-import classes from "./Footer.module.css"
-import { FaDiscord, FaTwitter, FaFlickr } from "react-icons/fa";
+import { BottomFooter } from "./BottomFooter";
 const Footer = () => {
-    return (
-        <div className={classes.footer}>
-            <div className={classes.browse}>
-                <div className={classes.title}>
-                    Your NFT needs a soundtrack.<br />Find it here.
-                </div>
-                <button className={classes.btn}>Browse Music</button>
-            </div>
-            <div className={classes.footer_bottom}>
-                <div className={classes.footer_comment}>@ 2022 Dequencey Music Inc</div>
-                <div className={classes.footer_icon_field}>
-                    <FaFlickr className={classes.icon} />
-                    <FaTwitter className={classes.icon} />
-                    <FaDiscord className={classes.icon} />
-                </div>
-                <div className={classes.footer_nav}>
-                    <div className={classes.footer_text}>DMCA Policy</div>
-                    <div className={classes.footer_text}>Terms of Service</div>
-                    <div className={classes.footer_text}>Privacy Policy</div>
-                </div>
-            </div>
+  return (
+    <div className="flex flex-col">
+      <div className="mx-[-100px] h-[350px] mb-10 px-[100px] bg-[#DBF91D] text-[#222801] flex flex-col justify-center items-center">
+        <div className="text-[32px] font-bold text-center mb-12">
+          Your NFT needs a soundtrack.
+          <br />
+          Find it here.
         </div>
-        
-    )
-}
-export default Footer
+        <button className="text-[16px] font-semibold text-center bg-white p-2 rounded-md">
+          Browse Music
+        </button>
+      </div>
+      <BottomFooter />
+    </div>
+  );
+};
+export default Footer;

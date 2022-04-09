@@ -18,3 +18,11 @@ a {
 * {
   box-sizing: border-box;
 }
+.swiper {
+  width: 100%;
+}
+.swiper-slide {
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+}

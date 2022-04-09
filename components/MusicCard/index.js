@@ -1,29 +1,39 @@
+import Image from "next/image";
 import tw from "tailwind-styled-components";
-import Link from "next/link";
-import { MyImage } from "../MyImage";
-export const MusicCard = ({ src, title, subtitle1, subtitle2, to }) => {
+import { useRouter } from "next/router";
+
+export default function MusicCard({ info }) {
+  const router = useRouter();
   return (
-    <Wrapper>
-      <Container>
-        <Link href={to}>
-          <a>
-            <MyImage src={src} width="120" height="120" />
-            <p className="text-sm font-semibold mt-1">{title}</p>
-            <p className="text-sm font-semibold mt-1">{subtitle1}</p>
-            <p className="text-xs font-normal mt-0.5">{subtitle2}</p>
-          </a>
-        </Link>
-      </Container>
+    <Wrapper onClick={() => router.push(`/album/${info.id}`)}>
+      <div className="flex flex-col w-[120px] h-[180px]">
+        <Image
+          src={info.image}
+          width={120}
+          height={120}
+          objectFit="cover"
+          className="rounded-lg"
+          alt=""
+        />
+        <p className="text-sm font-semibold mt-1">{info.cName}</p>
+        <p className="text-sm font-semibold mt-1">{info.title}</p>
+        <p className="text-xs font-normal mt-0.5">{info.auther}</p>
+      </div>
     </Wrapper>
   );
-};
-
+}
 const Wrapper = tw.div`
-  flex  
-  flex-col
-  mr-8
-`;
-const Container = tw.div`
-  rounded-lg
-  w-[120px]
+  shrink-0
+  flex
+  rounded-lg 
+  overflow-hidden 
+  shadow-xl 
+  cursor-pointer 
+  border-[3px] 
+  border-[#f9f9f9] 
+  border-opacity-10 
+  hover:boder-opacity-80 
+  hover:shadow-2xl transform 
+  hover:scale-105 
+  transition duration-300
 `;
