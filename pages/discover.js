@@ -18,7 +18,10 @@ const MusicGallery = () => {
         >
           {musicData.map((item, index) => {
             return (
-              <SwiperSlide className="w-[120px] shrink-0 basis-[120px] ml-3">
+              <SwiperSlide
+                key={index}
+                className="w-[120px] shrink-0 basis-[120px] ml-3"
+              >
                 <div className="w-[120px] shrink-0 mr-6">
                   <MusicCard info={item} />
                 </div>
@@ -39,7 +42,10 @@ const MusicGallery = () => {
         >
           {genresCardInfo.map((item, index) => {
             return (
-              <SwiperSlide className="w-[160px] h-[90px] shrink-0 basis-[160px] ml-3">
+              <SwiperSlide
+                key={index}
+                className="w-[160px] h-[90px] shrink-0 basis-[160px] ml-3"
+              >
                 <div className="w-[160px] h-[90px] shrink-0 mr-6">
                   <GenresCard info={item} />
                 </div>

@@ -5,10 +5,10 @@ import MusicPlayer from "../components/MusicPlayer";
 export default function Home() {
   return (
     <div>
-      {/* <Hero />
+      <Hero />
       <HomePage />
-      <Footer /> */}
-      <MusicPlayer />
+      <Footer />
+      {/* <MusicPlayer /> */}
     </div>
   );
 }

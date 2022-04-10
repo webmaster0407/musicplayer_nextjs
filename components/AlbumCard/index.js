@@ -26,7 +26,7 @@ export const AlbumCard = ({ src, title, license, desc }) => {
         <div className="mb-5 flex">
           {/* <MusicPlayer /> */}
 
-          {/* <FaPlayCircle className="text-5xl text-[#2d3248] hover:text-yellow-400 items-center pointer " /> */}
+          <FaPlayCircle className="text-5xl text-[#2d3248] hover:text-yellow-400 items-center pointer " />
           {/* <button className="text-lg bg-[#2d3248] border-[#3f4664] font-semibold w-[50px] h-[50px] pointer text-center items-center rounded-full"></button> */}
           {/* <Wave /> */}
         </div>

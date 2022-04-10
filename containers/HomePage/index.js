@@ -35,7 +35,10 @@ const FeaturedBody = () => {
         >
           {Artists.map((item, index) => {
             return (
-              <SwiperSlide className="w-[200px] h-[200px] shrink-0 basis-[200px] ml-3">
+              <SwiperSlide
+                key={index}
+                className="w-[200px] h-[200px] shrink-0 basis-[200px] ml-3"
+              >
                 <div className="w-[200px] h-[200px] shrink-0 mr-6">
                   <MainCard info={item} />
                 </div>
@@ -55,7 +58,10 @@ const FeaturedBody = () => {
         >
           {featuredSongs.map((item, index) => {
             return (
-              <SwiperSlide className="w-[200px] h-[200px] shrink-0 basis-[200px] ml-3">
+              <SwiperSlide
+                key={index}
+                className="w-[200px] h-[200px] shrink-0 basis-[200px] ml-3"
+              >
                 <div className="w-[200px] h-[200px] shrink-0 mr-6">
                   <MainCard info={item} />
                 </div>
@@ -76,7 +82,10 @@ const FeaturedBody = () => {
         >
           {genresCardInfo.map((item, index) => {
             return (
-              <SwiperSlide className="w-[160px] h-[90px] shrink-0 basis-[160px] ml-3">
+              <SwiperSlide
+                key={index}
+                className="w-[160px] h-[90px] shrink-0 basis-[160px] ml-3"
+              >
                 <div className="w-[160px] h-[90px] shrink-0 mr-6">
                   <GenresCard info={item} />
                 </div>
