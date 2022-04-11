@@ -2,24 +2,14 @@ import tw from "tailwind-styled-components";
 import { AlbumHead } from "../../components/AlbumHead";
 import { AlbumCard } from "../../components/AlbumCard";
 import Link from "next/link";
+import { BreadCrumb } from "../../components/BreadCrumb";
 export default function Album({ data }) {
   console.log(data);
   if (data)
     return (
       <>
-        <div className="mt-10 ml-6 flex">
-          <Link href="/discover" passHref>
-            <a>discover</a>
-          </Link>
-          <a className="mx-3"></a>
-          <Link href="/discover" passHref>
-            <a>{data.auther}</a>
-          </Link>
-          <a className="mx-3"></a>
-          <Link href="/discover" passHref>
-            <a>{data.albumTitle}</a>
-          </Link>
-        </div>
+        <BreadCrumb />
+
         <GalleryWrapper>
           <AlbumHead
             src={data.src}

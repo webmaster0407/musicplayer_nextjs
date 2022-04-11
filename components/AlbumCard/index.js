@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Wave from "../Wave";
-import { FaPlayCircle } from "react-icons/fa";
-import MusicPlayer from "../MusicPlayer";
+import IndexPage from "../MusicPlayer";
 export const AlbumCard = ({ src, title, license, desc }) => {
   return (
     <div className="flex w-full border-b-[1px] border-cyan-800 mb-3">
@@ -23,10 +21,9 @@ export const AlbumCard = ({ src, title, license, desc }) => {
             </Link>
           </div>
         </div>
-        <div className="mb-5 flex">
+        <div className="mb-5 flex w-full">
           {/* <MusicPlayer /> */}
-
-          <FaPlayCircle className="text-5xl text-[#2d3248] hover:text-yellow-400 items-center pointer " />
+          <IndexPage />
           {/* <button className="text-lg bg-[#2d3248] border-[#3f4664] font-semibold w-[50px] h-[50px] pointer text-center items-center rounded-full"></button> */}
           {/* <Wave /> */}
         </div>

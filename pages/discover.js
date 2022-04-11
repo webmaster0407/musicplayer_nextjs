@@ -8,57 +8,59 @@ import "swiper/css";
 
 const MusicGallery = () => {
   return (
-    <div className="ml-5 mt-12">
-      <h1 className="font-normal text-2xl">Newly Added</h1>
-      <div className="flex space-x-6 mt-8 mb-8">
-        <Swiper
-          watchSlidesProgress={true}
-          slidesPerView={3}
-          className="mySwiper"
-        >
-          {musicData.map((item, index) => {
-            return (
-              <SwiperSlide
-                key={index}
-                className="w-[120px] shrink-0 basis-[120px] ml-3"
-              >
-                <div className="w-[120px] shrink-0 mr-6">
-                  <MusicCard info={item} />
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-        {/* {musicData.map((item) => {
+    <>
+      <div className="ml-5 mt-12">
+        <h1 className="font-normal text-2xl">Newly Added</h1>
+        <div className="flex space-x-6 mt-8 mb-8">
+          <Swiper
+            watchSlidesProgress={true}
+            slidesPerView={3}
+            className="mySwiper"
+          >
+            {musicData.map((item, index) => {
+              return (
+                <SwiperSlide
+                  key={index}
+                  className="w-[120px] shrink-0 basis-[120px] ml-3"
+                >
+                  <div className="w-[120px] shrink-0 mr-6">
+                    <MusicCard info={item} />
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+          {/* {musicData.map((item) => {
           return <MusicCard key={item.id} info={item} />;
         })} */}
-      </div>
-      <h1 className="font-normal text-3xl">Featured Genres</h1>
-      <div className="flex space-x-6 mt-8 mb-20">
-        <Swiper
-          watchSlidesProgress={true}
-          slidesPerView={3}
-          className="mySwiper"
-        >
-          {genresCardInfo.map((item, index) => {
-            return (
-              <SwiperSlide
-                key={index}
-                className="w-[160px] h-[90px] shrink-0 basis-[160px] ml-3"
-              >
-                <div className="w-[160px] h-[90px] shrink-0 mr-6">
-                  <GenresCard info={item} />
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-        {/* {genresCardInfo.map((item) => {
+        </div>
+        <h1 className="font-normal text-3xl">Featured Genres</h1>
+        <div className="flex space-x-6 mt-8 mb-20">
+          <Swiper
+            watchSlidesProgress={true}
+            slidesPerView={3}
+            className="mySwiper"
+          >
+            {genresCardInfo.map((item, index) => {
+              return (
+                <SwiperSlide
+                  key={index}
+                  className="w-[160px] h-[90px] shrink-0 basis-[160px] ml-3"
+                >
+                  <div className="w-[160px] h-[90px] shrink-0 mr-6">
+                    <GenresCard info={item} />
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+          {/* {genresCardInfo.map((item) => {
           return <GenresCard key={item.id} info={item} />;
         })} */}
+        </div>
+        <BottomFooter />
       </div>
-      <BottomFooter />
-    </div>
+    </>
   );
 };
 

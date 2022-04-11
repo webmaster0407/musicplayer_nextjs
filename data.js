@@ -272,4 +272,94 @@ export const albumData = [
       },
     ],
   },
+  {
+    id: 3,
+    src: "https://admin.dequency.io/assets/daba75fc-bab7-4c2c-b740-a19e1b434f92.jpg",
+    albumTitle: "Let There Be House",
+    auther: "Aaron Wayne",
+    songs: [
+      {
+        title: "Bounce Em",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+      {
+        title: "Greazy",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+    ],
+  },
+  {
+    id: 4,
+    src: "https://admin.dequency.io/assets/daba75fc-bab7-4c2c-b740-a19e1b434f92.jpg",
+    albumTitle: "Let There Be House",
+    auther: "Aaron Wayne",
+    songs: [
+      {
+        title: "Bounce Em",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+      {
+        title: "Greazy",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+    ],
+  },
+  {
+    id: 5,
+    src: "https://admin.dequency.io/assets/daba75fc-bab7-4c2c-b740-a19e1b434f92.jpg",
+    albumTitle: "Let There Be House",
+    auther: "Aaron Wayne",
+    songs: [
+      {
+        title: "Bounce Em",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+      {
+        title: "Greazy",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+    ],
+  },
+  {
+    id: 6,
+    src: "https://admin.dequency.io/assets/daba75fc-bab7-4c2c-b740-a19e1b434f92.jpg",
+    albumTitle: "Let There Be House",
+    auther: "Aaron Wayne",
+    songs: [
+      {
+        title: "Bounce Em",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+      {
+        title: "Greazy",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+    ],
+  },
+  {
+    id: 7,
+    src: "https://admin.dequency.io/assets/daba75fc-bab7-4c2c-b740-a19e1b434f92.jpg",
+    albumTitle: "Let There Be House",
+    auther: "Aaron Wayne",
+    songs: [
+      {
+        title: "Bounce Em",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+      {
+        title: "Greazy",
+        desc: "Aaron Wayne-Let There Be House",
+        license: "License for $20-$25",
+      },
+    ],
+  },
 ];
