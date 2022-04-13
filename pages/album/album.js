@@ -4,29 +4,16 @@ import { AlbumCard } from "../../components/AlbumCard";
 import Link from "next/link";
 import { BreadCrumb } from "../../components/BreadCrumb";
 export default function Album({ data }) {
-  console.log(data);
   if (data)
     return (
       <>
-        <BreadCrumb />
+        <BreadCrumb data={data} />
 
         <GalleryWrapper>
-          <AlbumHead
-            src={data.src}
-            title={data.albumTitle}
-            auther={data.auther}
-          />
-          {data.songs.map((item, index) => {
-            return (
-              <AlbumCard
-                src={data.src}
-                key={index}
-                title={item.title}
-                desc={item.desc}
-                license={item.license}
-              />
-            );
-          })}
+          <AlbumHead data={data} />
+          {data.map((item) => (
+            <AlbumCard key={item.id} info={item} />
+          ))}
         </GalleryWrapper>
       </>
     );

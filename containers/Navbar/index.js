@@ -1,63 +1,3 @@
-// import tw from "tailwind-styled-components";
-// import Link from "next/link";
-// import { useRouter } from "next/router";
-// import { SearchBox } from "../../components/SearchBox";
-
-// const url = [
-//   { to: "/login", title: "Login" },
-//   { to: "/signup", title: "Create Account" },
-// ];
-
-// export const Navbar = () => {
-//   return (
-//     <NavbarWrapper>
-//       <NavMenuItem>
-//         <SearchBox />
-//       </NavMenuItem>
-//       <ul className="flex">
-//         {url.map((item, index) => {
-//           return (
-//             <NavMenuItem key={index}>
-//               <CustomLink to={item.to} title={item.title} />
-//             </NavMenuItem>
-//           );
-//         })}
-//       </ul>
-//     </NavbarWrapper>
-//   );
-// };
-
-// const CustomLink = ({ to, title }) => {
-//   const router = useRouter();
-//   return (
-//     <Link href={to} passHref={true}>
-//       <NavLink visited={to === router.pathname}>{title}</NavLink>
-//     </Link>
-//   );
-// };
-
-// const NavbarWrapper = tw.nav`
-//   w-full
-//   flex
-// `;
-
-// const NavMenuItem = tw.li`
-//   w-full
-//   px-6
-//   py-2
-//   flex
-//   gap-5
-//   text-[#B7BCD2]
-//   text-sm
-//   hover:text-white
-//   transition
-//   duration-300
-// `;
-
-// const NavLink = tw.a`
-//   ${({ visited = false }) => !!visited && "text-[#E3FA51]"}
-//   cursor-pointer
-// `;
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 import Image from "next/image";
@@ -65,19 +5,17 @@ import { FaUserCircle } from "react-icons/fa";
 import { SearchBox } from "../../components/SearchBox";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
-import { Sidebar } from "../Sidebar";
+
 export function Navbar(props) {
   const [sidebar, setSidebar] = useState(false);
-  const [leftSidebar, setLeftSidebar] = useState(false);
   const handleLeftSidebar = () => {
-    console.log("toggle", props.toggle);
     props.toggle();
   };
   const handleSidebar = () => {
     setSidebar(!sidebar);
   };
   return (
-    <div className="top-0 sm:top-4">
+    <div className="top-0 sm:top-4 sm:ml-[220px]">
       {/* navbar */}
       <div className="relative w-full flex h-14 items-center justify-between px-4 shadow-lg text-white">
         <div>
@@ -95,7 +33,7 @@ export function Navbar(props) {
             style={{ display: "none" }}
           />
         </div>
-        <SearchBox />
+        <SearchBox setSearchTerm={props.setSearchTerm} />
         <div className="flex sm:hidden ">
           <FaSearch className="text-lg text-yellow-400 mr-12 ml-4" />
           <button

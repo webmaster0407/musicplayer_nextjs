@@ -2,9 +2,12 @@ import "../styles/globals.css";
 import Head from "next/head";
 import { Page, PageContent, Sidebar, PageWrapper } from "../containers";
 import { useState } from "react";
+import { useHomeFetch } from "../useHomeFetch";
+import { Navbar } from "../containers/Navbar";
 
 function MyApp({ Component, pageProps }) {
   const [sidebar, setSidebar] = useState(false);
+  const { searchTerm, setSearchTerm } = useHomeFetch();
 
   const toggleSidebar = () => {
     setSidebar(!sidebar);
@@ -19,7 +22,8 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <PageWrapper>
         <Sidebar open={sidebar} toggle={toggleSidebar} />
-        <PageContent toggle={toggleSidebar}>
+        <Navbar toggle={toggleSidebar} setSearchTerm={setSearchTerm} />
+        <PageContent searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
           <Component {...pageProps} />
         </PageContent>
       </PageWrapper>

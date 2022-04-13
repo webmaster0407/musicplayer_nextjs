@@ -4,7 +4,9 @@ import { useRouter } from "next/router";
 export const GenresCard = ({ info }) => {
   const router = useRouter();
   return (
-    <Wrapper onClick={() => router.push(`/search/${info.id}`)}>
+    // router.push('/?step=2', null, { shallow: true })
+    //<Wrapper onClick={() => router.push(`/search/${info.id}`)}>
+    <Wrapper onClick={() => router.push(`/search/?genres=${info.id}`)}>
       <Image src={info.image} width="160px" height="90px" alt="" />
       <p className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 font-bold text-xl z-20">
         {info.title}

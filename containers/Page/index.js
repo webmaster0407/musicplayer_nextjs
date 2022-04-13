@@ -1,5 +1,6 @@
 import tw from "tailwind-styled-components";
-import { SearchBox, Navbar } from "../Navbar";
+import { Navbar } from "../Navbar";
+import React from "react";
 
 export const Page = tw.section`
   w-full
@@ -8,14 +9,19 @@ export const Page = tw.section`
 
 export const PageWrapper = tw.div`
   bg-[#13151E]
-  h-[100vh]
+  overflow-hidden
 `;
-export const PageContent = ({ children, toggle }) => {
+export const PageContent = ({ children, setSearchTerm, searchTerm }) => {
   return (
-    <div className="p-[0px] bg-[#1B1E2B] h-[100vh] overflow-y-scroll md:p-[30px] text-white ML:ml-[240px]">
+    <div className="p-[0px] bg-[#1B1E2B] min-h-screen md:p-[30px] text-white ML:ml-[240px]">
       {/* <SearchBox /> */}
-      <Navbar toggle={toggle} />
-      <div>{children}</div>
+      {/* <Navbar toggle={toggle} setSearchTerm={setSearchTerm} /> */}
+      <div>
+        {React.cloneElement(children, {
+          searchTerm: searchTerm,
+          setSearchTerm: setSearchTerm,
+        })}
+      </div>
     </div>
   );
 };

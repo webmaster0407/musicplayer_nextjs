@@ -39,3 +39,12 @@ a {
   line-height: 300px;
   text-align: center;
 }
+
+#loader {
+  color: #008cff;
+  height: 40px;
+  left: 45%;
+  position: absolute;
+  top: 45%;
+  width: 30%;
+}

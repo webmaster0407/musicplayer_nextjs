@@ -1,12 +1,19 @@
 import { FaSearch } from "react-icons/fa";
 import { AiFillCloseSquare } from "react-icons/ai";
 import tw from "tailwind-styled-components";
-import { useState } from "react";
-export const SearchBox = () => {
+import { useState, useRef } from "react";
+export const SearchBox = ({ setSearchTerm }) => {
   const [focused, setFocused] = useState(false);
+  const [state, setState] = useState("");
+  const initial = useRef(true);
+
   const handleClick = () => {
     setFocused(true);
   };
+  const handleBtnClick = () => {
+    setSearchTerm(state);
+  };
+
   return (
     <div className="hidden justify-between w-full items-center ML:flex">
       <div className="relative w-full mr-6">
@@ -18,6 +25,13 @@ export const SearchBox = () => {
             type="text"
             placeholder="Search for songs, artists, mood"
             onClick={handleClick}
+            onChange={(event) => setState(event.currentTarget.value)}
+            onKeyUp={(event) => {
+              if (event.code === "Enter") {
+                handleBtnClick();
+              }
+            }}
+            value={state}
           />
           {focused && (
             <div className="absolute right-0 top-2 items-center flex">
@@ -27,7 +41,7 @@ export const SearchBox = () => {
                   setFocused(false);
                 }}
               />
-              <SearchButton>Search</SearchButton>
+              <SearchButton onClick={handleBtnClick}>Search</SearchButton>
             </div>
           )}
         </Wrapper>
