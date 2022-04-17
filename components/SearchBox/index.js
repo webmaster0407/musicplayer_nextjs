@@ -2,16 +2,18 @@ import { FaSearch } from "react-icons/fa";
 import { AiFillCloseSquare } from "react-icons/ai";
 import tw from "tailwind-styled-components";
 import { useState, useRef } from "react";
+import { useRouter } from "next/router";
 export const SearchBox = ({ setSearchTerm }) => {
   const [focused, setFocused] = useState(false);
   const [state, setState] = useState("");
   const initial = useRef(true);
-
+  const router = useRouter();
   const handleClick = () => {
     setFocused(true);
   };
   const handleBtnClick = () => {
     setSearchTerm(state);
+    router.push("/search/?genres");
   };
 
   return (

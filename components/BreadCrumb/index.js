@@ -6,11 +6,11 @@ export const BreadCrumb = ({ data }) => {
         <a className="text-yellow-500 mr-2">discover</a>
       </Link>
       <a>&gt;</a>
-      <Link href={"discover/" + data[0].artist}>
-        <a className="text-yellow-500 mr-2 ml-2">{data[0].artist}</a>
+      <Link href={"artist/" + data.artist}>
+        <a className="text-yellow-500 mr-2 ml-2">{data.artist}</a>
       </Link>
       <a>&gt;</a>
-      <a className="text-white ml-2">{data[0].title}</a>
+      <a className="text-white ml-2">{data.title}</a>
     </div>
   );
 };

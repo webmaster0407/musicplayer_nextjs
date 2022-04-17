@@ -3,6 +3,7 @@ import { BottomFooter } from "../components/Footer/BottomFooter";
 import { GenresCard } from "../components/GenresCard";
 import MusicCard from "../components/MusicCard";
 import { genresCardInfo, musicData } from "../data";
+import { genres } from "../dummyData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -41,17 +42,18 @@ const MusicGallery = () => {
             slidesPerView={3}
             className="mySwiper"
           >
-            {genresCardInfo.map((item, index) => {
-              return (
-                <SwiperSlide
-                  key={index}
-                  className="w-[160px] h-[90px] shrink-0 basis-[160px] ml-3"
-                >
-                  <div className="w-[160px] h-[90px] shrink-0 mr-6">
-                    <GenresCard info={item} />
-                  </div>
-                </SwiperSlide>
-              );
+            {genres.map((item) => {
+              if (item.featured == true)
+                return (
+                  <SwiperSlide
+                    key={item.id}
+                    className="w-[160px] h-[90px] shrink-0 basis-[160px] ml-3"
+                  >
+                    <div className="w-[160px] h-[90px] shrink-0 mr-6">
+                      <GenresCard info={item} />
+                    </div>
+                  </SwiperSlide>
+                );
             })}
           </Swiper>
           {/* {genresCardInfo.map((item) => {

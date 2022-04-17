@@ -2,6 +2,7 @@ import Image from "next/image";
 import tw from "tailwind-styled-components";
 import { useRouter } from "next/router";
 export const GenresCard = ({ info }) => {
+  console.log(info);
   const router = useRouter();
   return (
     // router.push('/?step=2', null, { shallow: true })
