@@ -23,6 +23,7 @@ export const SearchBox = ({ setSearchTerm }) => {
           </div>
           <SearchInput
             type="text"
+            id="searchInput"
             placeholder="Search for songs, artists, mood"
             onClick={handleClick}
             onChange={(event) => setState(event.currentTarget.value)}
@@ -39,6 +40,8 @@ export const SearchBox = ({ setSearchTerm }) => {
                 className="text-xl text-[#7F88AE] bg-white rounded-sm"
                 onClick={() => {
                   setFocused(false);
+                  setState("");
+                  document.getElementById("searchInput").value = "asdf";
                 }}
               />
               <SearchButton onClick={handleBtnClick}>Search</SearchButton>
@@ -53,7 +56,7 @@ export const SearchBox = ({ setSearchTerm }) => {
 const Wrapper = tw.div`    
   hidden
   ML:flex
-  bg-[#1B1E32]
+  bg-transparent
   w-full
   h-auto
   p-2

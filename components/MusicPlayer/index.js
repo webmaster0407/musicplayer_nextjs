@@ -37,7 +37,6 @@ export default function IndexPage() {
 
     const options = formWaveSurferOptions(waveformRef.current);
     wavesurfer.current = WaveSurfer.create(options);
-
     wavesurfer.current.load(url);
   };
 

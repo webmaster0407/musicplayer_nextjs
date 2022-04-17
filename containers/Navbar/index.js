@@ -15,7 +15,7 @@ export function Navbar(props) {
     setSidebar(!sidebar);
   };
   return (
-    <div className="top-0 sm:top-4 sm:ml-[220px]">
+    <div className="top-4 sm:top-4 sm:ml-[220px] sm:mt-2 sm:px-4">
       {/* navbar */}
       <div className="relative w-full flex h-14 items-center justify-between px-4 shadow-lg text-white">
         <div>

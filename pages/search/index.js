@@ -6,19 +6,26 @@ import PaginatedItems from "../../components/Pagenation";
 import { useRouter } from "next/router";
 
 const MusicGallery = ({ searchTerm, setSearchTerm }) => {
+  console.log(searchTerm);
   const [data, setData] = useState(musicData);
   useEffect(() => {
-    const newData = musicData.filter((item) => {
-      if (
-        item["title"].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
-        item["artist"].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
-        item["album"].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
-        item.types[0].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
-        item.types[1].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
-        item.types[2].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
-        item["license"].toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
-      )
-        return item;
+    const mySearchTermArray = searchTerm.split(",");
+    let newData = [];
+    musicData.filter((item) => {
+      mySearchTermArray.map((search, index) => {
+        if (
+          item["title"].toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
+          item["artist"].toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
+          item["album"].toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
+          item.types[0].toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
+          item.types[1].toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
+          item.types[2].toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
+          item["license"].toLowerCase().indexOf(search.toLowerCase()) !== -1
+        ) {
+          newData.push(item);
+          return;
+        }
+      });
     });
 
     setData(newData);
@@ -65,7 +72,7 @@ const MusicGallery = ({ searchTerm, setSearchTerm }) => {
     <Wrapper>
       <RadioWrapper>
         <p className="pb-5 text-yellow-400">GENRES</p>
-        <GenreBox setSearchTerm={setSearchTerm} />
+        <GenreBox setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
       </RadioWrapper>
       <MusicBoxWrapper>
         <div className="flex justify-between pb-5">
@@ -89,11 +96,16 @@ const MusicGallery = ({ searchTerm, setSearchTerm }) => {
   );
 };
 
-const GenreBox = ({ setSearchTerm }) => {
+const GenreBox = ({ setSearchTerm, searchTerm }) => {
   return (
     <div className="flex flex-col">
       {genres.map((item) => (
-        <Radio key={item.id} title={item.title} setSearchTerm={setSearchTerm} />
+        <Radio
+          key={item.id}
+          title={item.title}
+          setSearchTerm={setSearchTerm}
+          searchTerm={searchTerm}
+        />
       ))}
     </div>
   );

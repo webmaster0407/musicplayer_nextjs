@@ -1,5 +1,6 @@
 import { MainCard } from "../../components/MainCard";
 import { BiHomeAlt, BiSearchAlt2, BiWindows } from "react-icons/bi";
+import { MdDescription, MdOutlineNfc } from "react-icons/md";
 import { Artists, featuredSongs, genresCardInfo } from "../../data";
 import { GenresCard } from "../../components/GenresCard";
 
@@ -8,14 +9,17 @@ import "swiper/css";
 
 const works = [
   {
+    icon: "search",
     title: "Browse Sounds",
     text: "Find the music that brings your visuals to life.",
   },
   {
+    icon: "license",
     title: "Mint Your License",
     text: "Get licenses for NFT art and metaverse productions so you are covered for any on-chain visual projects.",
   },
   {
+    icon: "download",
     title: "Download and Go",
     text: "Grab your audio file and start creating!",
   },
@@ -105,7 +109,14 @@ const FeaturedBody = () => {
         {works.map((work, i) => (
           <div className="ml-3 mr-4 flex flex-col sm:mr-10 w-[400px] " key={i}>
             <div className="w-[55px] h-[55px] flex items-center justify-center rounded-lg mb-[16px] bg-[#3f4664]">
-              <BiSearchAlt2 className="text-white text-3xl" />
+              {/* <BiSearchAlt2 className="text-white text-3xl" /> */}
+              {work.icon === "search" ? (
+                <BiSearchAlt2 className="text-white text-3xl" />
+              ) : work.icon === "license" ? (
+                <MdDescription className="text-white text-3xl" />
+              ) : (
+                <MdOutlineNfc className="text-white text-3xl" />
+              )}
             </div>
             <div className="text-[15px] sm:text-[20px] text-white mb-[20px]">
               {work.title}

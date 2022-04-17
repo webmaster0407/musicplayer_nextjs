@@ -48,3 +48,48 @@ a {
   top: 45%;
   width: 30%;
 }
+
+input[type="checkbox"] {
+  position: relative;
+}
+
+input[type="checkbox"]:hover:before {
+  display: block;
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -13px;
+  left: -13px;
+}
+
+input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: 2px solid white;
+  box-shadow: none;
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 1em;
+  background: transparent;
+}
+
+input[type="checkbox"]:checked {
+  outline-color: yellow;
+}
+
+input[type="checkbox"]:checked:after {
+  content: "✔";
+  color: black;
+  background: yellow;
+  width: 14px;
+  height: 14px;
+  display: block;
+}
