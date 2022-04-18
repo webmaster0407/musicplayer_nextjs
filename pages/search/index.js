@@ -86,10 +86,6 @@ const MusicGallery = ({ searchTerm, setSearchTerm }) => {
             <option>Sort by: Z-A</option>
           </select>
         </div>
-        {/* <Hyper text={data} /> */}
-        {/* {data.map((item, index) => {
-          return <h1 key={index}>{item.title}</h1>;
-        })} */}
         <PaginatedItems itemsPerPage={4} items={data} />
       </MusicBoxWrapper>
     </Wrapper>

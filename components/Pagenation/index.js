@@ -17,6 +17,7 @@ function Items({ currentItems }) {
 
 export default function PaginatedItems({ itemsPerPage, items }) {
   // We start with an empty list of items.
+  console.log(items);
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   // Here we use item offsets; we could also use page offsets
@@ -27,7 +28,11 @@ export default function PaginatedItems({ itemsPerPage, items }) {
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(items.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(items.length / itemsPerPage));
+    const pageNum = Math.ceil(items.length / itemsPerPage);
+    setPageCount(pageNum);
+    console.log(pageNum);
+    console.log(pageCount);
+    setItemOffset(0);
   }, [itemOffset, itemsPerPage, items]);
 
   // Invoke when user click to request another page.
